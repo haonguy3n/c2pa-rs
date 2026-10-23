@@ -1,0 +1,6 @@
+# Build against the system OpenSSL so the host's FIPS provider can be used.
+# openssl-sys still has the `vendored` feature enabled by c2pa/c2pa_raw_crypto,
+# but OPENSSL_NO_VENDOR makes it link the system library instead of building
+# its own copy. Set OPENSSL_NO_VENDOR=0 to opt back into the bundled build.
+[env]
+OPENSSL_NO_VENDOR = "1"
